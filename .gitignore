@@ -1,0 +1,94 @@
+## ---------------------------
+## .NET / ASP.NET Core
+## ---------------------------
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+.idea/
+*.rsuser
+
+# EF Core migrations output you don't want tracked (keep actual Migrations folder, ignore snapshots if regenerated locally — usually leave this commented out)
+# Migrations/
+
+# Secrets & environment-specific configs
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+!appsettings.Production.json
+*.pfx
+secrets.json
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## ---------------------------
+## Node / React / Angular (frontend)
+## ---------------------------
+node_modules/
+dist/
+build/
+.angular/
+.next/
+.turbo/
+coverage/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+## ---------------------------
+## Docker
+## ---------------------------
+*.env
+docker-compose.override.yml
+
+## ---------------------------
+## OS / Editor junk
+## ---------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+
+## ---------------------------
+## Database (if using local SQLite/dev DB files)
+## ---------------------------
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
