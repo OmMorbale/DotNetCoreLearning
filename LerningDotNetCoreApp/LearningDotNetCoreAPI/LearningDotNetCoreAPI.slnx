@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="LearningDotNetCoreAPI/LearningDotNetCoreAPI.csproj" />
+  <Project Path="Tests/Tests.csproj" Id="30392f08-4430-4c27-af79-5183208c5e22" />
 </Solution>

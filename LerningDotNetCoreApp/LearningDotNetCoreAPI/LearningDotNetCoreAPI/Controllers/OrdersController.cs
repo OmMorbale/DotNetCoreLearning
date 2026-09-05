@@ -1,4 +1,5 @@
 ﻿using LearningDotNetCoreAPI.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,7 @@ namespace LearningDotNetCoreAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly AppDbContext _db;

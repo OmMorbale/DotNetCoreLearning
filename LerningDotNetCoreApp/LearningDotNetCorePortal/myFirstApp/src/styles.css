@@ -1,0 +1,15 @@
+@import "primeicons/primeicons.css";
+
+:root {
+	font-family: "Avenir Next", "Segoe UI", sans-serif;
+	color: #243447;
+	background: #f5f7f9;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}

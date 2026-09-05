@@ -1,0 +1,21 @@
+@if (authService.isLoggedIn()) {
+	<header class="app-header">
+		<a class="brand" routerLink="/orders">ORDERLY</a>
+
+		<nav aria-label="Main navigation">
+			<a routerLink="/orders" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Orders</a>
+			<a routerLink="/orders/create" routerLinkActive="active">Create order</a>
+		</nav>
+
+		<button
+			pButton
+			type="button"
+			label="Logout"
+			icon="pi pi-sign-out"
+			class="logout-button"
+			(click)="logout()"
+		></button>
+	</header>
+}
+
+<router-outlet></router-outlet>

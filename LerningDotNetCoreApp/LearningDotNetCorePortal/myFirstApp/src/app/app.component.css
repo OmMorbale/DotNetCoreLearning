@@ -1,0 +1,62 @@
+.app-header {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	min-height: 4.5rem;
+	padding: 0 2rem;
+	background: #153d3b;
+	color: #f5f7f9;
+}
+
+.brand {
+	color: #f4b556;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-decoration: none;
+}
+
+nav {
+	display: flex;
+	gap: 1.5rem;
+	flex: 1;
+}
+
+nav a {
+	padding: 0.45rem 0;
+	color: #c3d5d2;
+	font-size: 0.9rem;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+	color: #fff;
+	border-bottom-color: #f4b556;
+}
+
+.logout-button {
+	background: transparent;
+	border-color: #6f9892;
+}
+
+.logout-button:hover {
+	background: #1b5d57;
+	border-color: #c3d5d2;
+}
+
+@media (max-width: 600px) {
+	.app-header {
+		gap: 1rem;
+		padding: 0 1rem;
+	}
+
+	nav {
+		gap: 0.8rem;
+	}
+
+	.logout-button ::ng-deep .p-button-label {
+		display: none;
+	}
+}

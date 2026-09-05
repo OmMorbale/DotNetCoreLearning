@@ -1,0 +1,44 @@
+.p-fluid-form {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--surface-card, #fff);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-color, #333);
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    .p-inputnumber,
+    .p-inputtext {
+      width: 100%;
+    }
+
+    .p-error {
+      color: var(--red-500, #e24c4c);
+      font-size: 0.8rem;
+      margin-top: 0.35rem;
+    }
+
+    input.ng-invalid.ng-touched {
+      border-color: var(--red-500, #e24c4c);
+    }
+  }
+
+  p-button button,
+  .p-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}

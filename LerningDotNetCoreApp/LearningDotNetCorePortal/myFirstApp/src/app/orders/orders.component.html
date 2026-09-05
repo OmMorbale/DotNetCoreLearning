@@ -1,0 +1,38 @@
+<!-- orders.component.html -->
+<p-table
+  [value]="orders"
+  [paginator]="true"
+  [rows]="10"
+  [rowHover]="true"
+  styleClass="p-datatable-striped"
+  responsiveLayout="scroll"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="customerName">
+        Customer <p-sortIcon field="customerName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="amount">
+        Amount <p-sortIcon field="amount"></p-sortIcon>
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-order>
+    <tr>
+      <td>{{ order.customerName }}</td>
+      <td>{{ order.amount | currency }}</td>
+        <td>
+          <a [routerLink]="['/orders/edit', order.id]"><p-button severity="secondary"><i class="pi pi-pencil"></i></p-button></a>
+          <p-button (click)="onDelete(order.id)" severity="danger"><i class="pi pi-trash"></i></p-button>
+        </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="2">No orders found.</td>
+    </tr>
+  </ng-template>
+</p-table>

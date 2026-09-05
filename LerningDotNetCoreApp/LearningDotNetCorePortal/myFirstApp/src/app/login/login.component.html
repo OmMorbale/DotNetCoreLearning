@@ -1,0 +1,63 @@
+<main class="login-page">
+  <section class="welcome-panel" aria-label="Welcome">
+    <div class="brand-mark"><i class="pi pi-box"></i></div>
+    <p class="eyebrow">ORDERLY</p>
+    <h1>Make every order feel effortless.</h1>
+    <p class="welcome-copy">A calmer way to keep customers, orders, and the day moving in the right direction.</p>
+    <div class="accent-line"></div>
+    <p class="welcome-note"><i class="pi pi-sparkles"></i> Simple tools. Clear momentum.</p>
+  </section>
+
+  <section class="form-panel" aria-labelledby="login-title">
+    <div class="form-content">
+      <p class="form-kicker">Welcome back</p>
+      <h2 id="login-title">Sign in to your account</h2>
+      <p class="form-intro">Enter your details to continue to your workspace.</p>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            pInputText
+            formControlName="username"
+            autocomplete="username"
+            placeholder="Enter your username"
+          />
+          @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
+            <small class="error-message">Username is required.</small>
+          }
+        </div>
+
+        <div class="field">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <a href="/login">Forgot password?</a>
+          </div>
+          <p-password
+            inputId="password"
+            formControlName="password"
+            [feedback]="false"
+            [toggleMask]="true"
+            autocomplete="current-password"
+            placeholder="Enter your password"
+            styleClass="password-field"
+          ></p-password>
+          @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+            <small class="error-message">Password is required.</small>
+          }
+        </div>
+
+        <div class="options-row">
+          <p-checkbox inputId="remember" name="rememberMe"  formControlName="rememberMe" [binary]="true"></p-checkbox>
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button pButton type="submit" label="Sign in" icon="pi pi-arrow-right" iconPos="right" class="sign-in-button"></button>
+      </form>
+
+      <p class="support-copy">Need access? <a href="mailto:support@orderly.example">Contact your administrator</a></p>
+    </div>
+  </section>
+</main>

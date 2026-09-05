@@ -8,5 +8,13 @@ namespace LearningDotNetCoreAPI.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Order> Orders { get; set; }
+
+        // AppDbContext.cs
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>()
+                .Property(o => o.Amount)
+                .HasPrecision(18, 2);
+        }
     }
 }

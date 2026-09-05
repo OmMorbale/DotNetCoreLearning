@@ -1,0 +1,234 @@
+:host {
+  display: block;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(420px, 1.1fr);
+  background: #f5f7f9;
+}
+
+.welcome-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 8vw, 8rem);
+  color: #f5f7f9;
+  background: #153d3b;
+}
+
+.welcome-panel::after {
+  content: "";
+  position: absolute;
+  width: 28rem;
+  height: 28rem;
+  right: -12rem;
+  bottom: -11rem;
+  border: 1px solid rgba(244, 181, 86, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3rem rgba(244, 181, 86, 0.07), 0 0 0 7rem rgba(244, 181, 86, 0.04);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 3.5rem;
+  color: #153d3b;
+  background: #f4b556;
+  border-radius: 12px;
+  font-size: 1.4rem;
+}
+
+.eyebrow, .form-kicker {
+  margin: 0 0 1rem;
+  color: #e9a945;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 30rem;
+  font-size: clamp(2.7rem, 4.5vw, 5rem);
+  line-height: 1.02;
+}
+
+.welcome-copy {
+  max-width: 25rem;
+  margin: 1.6rem 0 0;
+  color: #c3d5d2;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.accent-line {
+  width: 4rem;
+  height: 2px;
+  margin: 3rem 0 1.2rem;
+  background: #f4b556;
+}
+
+.welcome-note {
+  margin: 0;
+  color: #dce9e6;
+  font-size: 0.85rem;
+}
+
+.welcome-note i {
+  margin-right: 0.45rem;
+  color: #f4b556;
+}
+
+.form-panel {
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+}
+
+.form-content {
+  width: min(100%, 27rem);
+}
+
+.form-kicker {
+  color: #23736b;
+}
+
+h2 {
+  color: #1d2d35;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.1;
+}
+
+.form-intro {
+  margin: 0.9rem 0 2.5rem;
+  color: #6b7a82;
+  line-height: 1.6;
+}
+
+.field {
+  margin-bottom: 1.35rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #34464e;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+input[pInputText], :host ::ng-deep .password-field,
+:host ::ng-deep .password-field input {
+  width: 100%;
+}
+
+input[pInputText], :host ::ng-deep .password-field input {
+  min-height: 3rem;
+  border-color: #d4dfe0;
+  border-radius: 7px;
+}
+
+input[pInputText]:focus, :host ::ng-deep .password-field input:focus {
+  border-color: #23736b;
+  box-shadow: 0 0 0 3px rgba(35, 115, 107, 0.12);
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.label-row a, .support-copy a {
+  color: #23736b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.label-row a:hover, .support-copy a:hover {
+  text-decoration: underline;
+}
+
+.options-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.25rem 0 1.8rem;
+}
+
+.options-row label {
+  margin: 0;
+  color: #6b7a82;
+  font-weight: 400;
+}
+
+.sign-in-button {
+  width: 100%;
+  min-height: 3rem;
+  background: #23736b;
+  border-color: #23736b;
+  border-radius: 7px;
+}
+
+.sign-in-button:hover {
+  background: #1b5d57;
+  border-color: #1b5d57;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.4rem;
+  color: #c44b42;
+  font-size: 0.75rem;
+}
+
+.support-copy {
+  margin: 2rem 0 0;
+  color: #7d898e;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .login-page {
+    display: block;
+  }
+
+  .welcome-panel {
+    min-height: 18rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .brand-mark {
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    max-width: 24rem;
+    font-size: 2.6rem;
+  }
+
+  .welcome-copy, .accent-line, .welcome-note {
+    display: none;
+  }
+
+  .form-panel {
+    padding: 3.5rem 2rem;
+  }
+}

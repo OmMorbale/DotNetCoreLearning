@@ -1,0 +1,26 @@
+<!-- order-form.component.html -->
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="p-fluid-form">
+  <h2>{{ isEditMode ? 'Edit Order' : 'Create Order' }}</h2>
+
+  <div class="field">
+    <label for="customerName">Customer Name</label>
+    <input id="customerName" type="text" pInputText formControlName="customerName" />
+    <small class="p-error" *ngIf="orderForm.get('customerName')?.invalid && orderForm.get('customerName')?.touched">
+      Customer name is required.
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="amount">Amount</label>
+    <input id="amount" type="number" pInputText formControlName="amount" />
+    <small class="p-error" *ngIf="orderForm.get('amount')?.invalid && orderForm.get('amount')?.touched">
+      Amount must be at least 1.
+    </small>
+  </div>
+
+  <p-button
+    type="submit"
+    [label]="isEditMode ? 'Update Order' : 'Create Order'"
+    [disabled]="orderForm.invalid"
+  ></p-button>
+</form>
