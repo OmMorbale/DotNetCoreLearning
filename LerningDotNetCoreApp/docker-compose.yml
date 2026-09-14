@@ -1,0 +1,26 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    ports:
+      - "1434:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+  api:
+    build:
+      context: ./LearningDotNetCoreAPI/LearningDotNetCoreAPI
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=MyFirstApiDb;User Id=sa;Password="${MSSQL_SA_PASSWORD}";TrustServerCertificate=True
+      - Jwt__Key=${JWT_KEY}
+    depends_on:
+      - sqlserver
+
+volumes:
+  sqlserver_data:
